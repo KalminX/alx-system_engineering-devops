@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -al | sort -k 9n
+ls -al | sort -k 9
