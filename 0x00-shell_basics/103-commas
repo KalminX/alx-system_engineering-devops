@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a | sort | paste -sd ','
+ls -p | sort | paste -sd ','
