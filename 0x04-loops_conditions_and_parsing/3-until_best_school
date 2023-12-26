@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Print a string using only the until command
+i="0"
+until [ $i -gt 9 ];
+do
+	echo "Best School"
+	i=$((i+1));
+done
