@@ -2,7 +2,7 @@
 # Using a nested for loop to output the cycle of a clock
 i="0"
 j="1"
-while [ $i -lt 12 ]; do
+while [ $i -le 12 ]; do
 	echo "Hour $i:"
 	while [ $j -lt 60 ]; do
 		echo "$j"
