@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# A bash script that gets the second field  file names based on a delimiter
+for f in *;do
+	echo "$f" | cut -d"-" -f2
+done
