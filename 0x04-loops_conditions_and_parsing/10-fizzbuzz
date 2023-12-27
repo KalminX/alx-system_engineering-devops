@@ -11,5 +11,5 @@ while [ $i -le 100 ]; do
 	else
 		echo "$i"
 	fi
-	i=$(($i+1))
+	i=$((i+1))
 done
