@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# A script that outputs the max PID
+echo $$
