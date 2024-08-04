@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # A script that displays the content of /etc/passwd in a particular format
 
-while IFS=: read -r user pass uid gid desc home shell; do
-    printf "$user:$uid:$home\n"
+while IFS=: read -r user _ uid _ _ home _; do
+    printf "%s:%s:%s\n" "$user" "$uid" "$home"
 done < /etc/passwd
