@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# A script that prints "To infinity and beyond" indefinitel
+mkdir -m 755 -p ./var/run/
+echo "$$" > ./var/run/myscript.pid
+
+trap 'echo "Y U no love me?!"; exit' SIGINT
+trap cleanup 3 15
+
+
+cleanup()
+{
+  echo "I hate the kill command"
+  rm -rf ./var/run/myscript.pid
+  exit
+}
+
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
