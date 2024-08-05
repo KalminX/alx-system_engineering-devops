@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# The script for the daemon
 
 start_process() {
     # echo "manage_my_process started"
