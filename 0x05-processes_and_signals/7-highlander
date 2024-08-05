@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # A script that prints "To infinity and beyond" indefinitely
 trap 'echo "I am invincible!!!"' SIGTERM
+trap 'echo "Killed"; exit;' 3
 
 while true; do
   echo "To infinity and beyond"
