@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+
+start_process() {
+    # echo "manage_my_process started"
+    # mkdir -p ./var/run/
+    # chmod 755 ./var/ ./var/run/
+    echo "$$" > /var/run/my_process.pid || { echo "Error: Could not write PID file"; exit 1; }
+    ./manage_my_process &
+}
+
+stop_process() {
+    # echo "manage_my_process stopped"
+    pkill -f ./manage_my_process
+    rm /var/run/my_process.pid
+}
+
+if [ $# -gt 1 ]; then
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit
+elif [ $# -eq 0 ]; then
+    echo "Usage: manage_my_process {start|stop|restart}"
+    exit
+fi
+
+if [ $1 = start ]; then
+    echo "manage_my_process started"
+    start_process
+elif [ $1 = stop ]; then
+    stop_process
+    echo "manage_my_process stopped"
+elif [ $1 = restart ]; then
+    stop_process
+    start_process
+    echo "manage_my_process restarted"
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi

@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+# A program that mimics the init.d commands
+
+mkdir -p ./tmp/
+chmod 755 ./tmp
+while true; do
+    echo "I am alive!" >> /tmp/my_process
+    sleep 2;
+done;
