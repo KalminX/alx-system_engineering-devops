@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # A script that displays the content of /etc/passwd in a particular format
 
-while IFS=: read -r user pass _ gid _ home shell; do
+while IFS=: read -r user pass uid gid _ home shell; do
     printf "The user %s is part of the %s gang, lives in %s and rides %s. %s's place is protected by the passcode %s, more info about the user here: %s\n" \
-    "$user" "$gid" "$home" "$shell" "$user" "$pass" "$user"
+    "$user" "$gid" "$home" "$shell" "$uid" "$pass" "$user"
 done < /etc/passwd
