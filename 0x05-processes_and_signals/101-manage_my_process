@@ -13,7 +13,6 @@ stop_process() {
     # echo "manage_my_process stopped"
     pkill -f ./manage_my_process
     rm /var/run/my_process.pid
-    echo "Stopped"
 }
 
 if [ "$#" -gt 1 ]; then
