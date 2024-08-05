@@ -1,0 +1,19 @@
+#!/bin/bash
+
+awk '
+{
+    # Match and extract IP address and HTTP code from each line
+    match($0, /^([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+).* ([0-9]{3})/, arr)
+    if (arr[1] && arr[2]) {
+        # Increment the count for each IP and HTTP code combination
+        key = arr[1] " " arr[2]
+        count[key]++
+    }
+}
+END {
+    # Print the counts for each key
+    for (k in count) {
+        print count[k], k
+    }
+}
+' apache-access.log | sort -nr
