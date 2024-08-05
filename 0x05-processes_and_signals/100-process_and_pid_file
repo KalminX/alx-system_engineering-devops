@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # A script that prints "To infinity and beyond" indefinitel
-mkdir -m 755 -p /var/run/
+mkdir -p /var/run
+mkdir -m 755 /var/run/
 echo "$$" > /var/run/myscript.pid
 
 trap 'echo "Y U no love me?!"; exit' SIGINT
