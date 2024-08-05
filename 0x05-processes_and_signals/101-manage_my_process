@@ -15,21 +15,21 @@ stop_process() {
     rm /var/run/my_process.pid
 }
 
-if [ $# -gt 1 ]; then
+if [ "$#" -gt 1 ]; then
     echo "Usage: manage_my_process {start|stop|restart}"
     exit
-elif [ $# -eq 0 ]; then
+elif [ "$#" -eq 0 ]; then
     echo "Usage: manage_my_process {start|stop|restart}"
     exit
 fi
 
-if [ $1 = start ]; then
+if [ "$1" = start ]; then
     echo "manage_my_process started"
     start_process
-elif [ $1 = stop ]; then
+elif [ "$1" = stop ]; then
     stop_process
     echo "manage_my_process stopped"
-elif [ $1 = restart ]; then
+elif [ "$1" = restart ]; then
     stop_process
     start_process
     echo "manage_my_process restarted"
