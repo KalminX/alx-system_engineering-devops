@@ -46,5 +46,6 @@ def main():
     output += f'tasks({len(tasks_done)}/20):\n{tasks_string}'
     print(output)
 
+
 if __name__ == '__main__':
     main()
