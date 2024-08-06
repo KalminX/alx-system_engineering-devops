@@ -42,10 +42,9 @@ def main():
             tasks_done.append(f'\t {title}')
 
     tasks_string = '\n'.join(tasks_done)
-    output = f'Employee {employee_name} is done with tasks ({len(tasks_done)}/20)'
-    output += f':\n{tasks_string}'
+    output = f'Employee {employee_name} is done with '
+    output += f'tasks({len(tasks_done)}/20):\n{tasks_string}'
     print(output)
-
 
 if __name__ == '__main__':
     main()
