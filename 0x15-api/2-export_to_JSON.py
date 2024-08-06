@@ -13,8 +13,8 @@ Arguments:
 """
 
 import json
-import sys
 import requests
+import sys
 
 
 def main():
