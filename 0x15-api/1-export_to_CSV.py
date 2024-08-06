@@ -6,8 +6,8 @@ and writes them to a CSV file.
 Usage: python3 script_name.py USER_ID
 """
 
-import requests
 import csv
+import requests
 import sys
 
 
@@ -29,7 +29,7 @@ def main():
         task for task in todo_json if task['userId'] == USER_ID
     ]
 
-    file_name = 'USER_ID.csv'
+    file_name = f'{user_id}.csv'
     with open(file_name, mode='w', newline='') as f:
         f_writer = csv.writer(
             f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL
