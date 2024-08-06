@@ -37,8 +37,9 @@ def main():
             tasks_done.append(f'\t {title}')
 
     tasks_string = '\n'.join(tasks_done)
-    head = f'Employee {employee_name} is done with tasks ({len(tasks_done)}/20):\n{tasks_string}'
-    print(head)
+    output = f'Employee {employee_name} is done with tasks ({len(tasks_done)}/20)'
+    output += f':\n{tasks_string}'
+    print(output)
 
 
 if __name__ == '__main__':
