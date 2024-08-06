@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# A command to select the ipaddresses on a network
+ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
