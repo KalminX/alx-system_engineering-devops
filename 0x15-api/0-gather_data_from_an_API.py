@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 """
-Module to fetch and display completed tasks of an employee from a JSONPlaceholder API.
+Module to fetch and display completed tasks of an
+employee from a JSONPlaceholder API.
 
-This module uses the `requests` library to fetch user and task data from JSONPlaceholder.
-It then filters and displays the completed tasks for a specified user.
+This module uses the `requests` library to fetch user
+and task data from JSONPlaceholder.
+It then filters and displays the completed
+tasks for a specified user.
 
 Usage:
     python script_name.py <user_id>
@@ -15,10 +18,12 @@ import sys
 
 def main():
     """
-    Main function to fetch and display completed tasks for a user.
+    Main function to fetch and display completed
+    tasks for a user.
 
     The user ID is taken from the command line arguments.
-    It fetches user and task data from JSONPlaceholder, filters the completed tasks
+    It fetches user and task data from JSONPlaceholder,
+    filters the completed tasks
     for the specified user, and prints them.
     """
     user_id = sys.argv[1]
