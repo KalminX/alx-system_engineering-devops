@@ -10,6 +10,7 @@ import requests
 import csv
 import sys
 
+
 def main():
     """
     Main function to fetch tasks and write them to a CSV file.
@@ -22,7 +23,6 @@ def main():
 
     todo_json = requests.get(TASK_URL).json()
     user_json = requests.get(USER_URL).json()
-    
     USER_ID = int(user_id)
     USERNAME = user_json['username']
     user_tasks = [
@@ -30,7 +30,6 @@ def main():
     ]
 
     file_name = 'USER_ID.csv'
-    
     with open(file_name, mode='w', newline='') as f:
         f_writer = csv.writer(
             f, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL
@@ -39,6 +38,7 @@ def main():
             f_writer.writerow([
                 user_id, USERNAME, task['completed'], task['title']
             ])
+
 
 if __name__ == '__main__':
     main()
