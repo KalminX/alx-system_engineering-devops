@@ -47,10 +47,6 @@ def main():
     output = f'Employee {EMPLOYEE_NAME} is done with '
     output += f'tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):'
     output += f'\n{tasks_string}'
-    
-    with open('student_output', 'w') as f:
-        f.write(output)
-    print(output)
 
 
 if __name__ == '__main__':
