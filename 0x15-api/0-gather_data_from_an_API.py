@@ -33,17 +33,19 @@ def main():
     user_json = requests.get(USER_URL).json()
     todo_json = requests.get(TASK_URL).json()
 
-    employee_name = user_json['name']
     tasks_done = []
+    EMPLOYEE_NAME = user_json['name']
 
     for task in todo_json:
         if task['completed'] and task['userId'] == int(user_id):
-            title = task['title']
-            tasks_done.append(f'\t {title}')
+            TASK_TITLE = task['title']
+            tasks_done.append(f'\t {TASK_TITLE}')
 
+    NUMBER_OF_DONE_TASKS = len(tasks_done)
+    TOTAL_NUMBER_OF_TASKS = 20
     tasks_string = '\n'.join(tasks_done)
-    output = f'Employee {employee_name} is done with '
-    output += f'tasks({len(tasks_done)}/20):\n{tasks_string}'
+    output = f'Employee {EMPLOYEE_NAME} is done with '
+    output += f'tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):\n{tasks_string}'
     print(output)
 
 
