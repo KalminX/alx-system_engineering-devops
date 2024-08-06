@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Module to fetch and save tasks of a user in a JSON file.
 
