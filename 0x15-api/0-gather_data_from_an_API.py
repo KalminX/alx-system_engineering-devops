@@ -45,7 +45,7 @@ def main():
     TOTAL_NUMBER_OF_TASKS = 20
     tasks_string = '\n'.join(tasks_done)
     output = f'Employee {EMPLOYEE_NAME} is done with '
-    output += f'tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):\n{tasks_string}'
+    output += f'\n{tasks_string}tasks({NUMBER_OF_DONE_TASKS}/{TOTAL_NUMBER_OF_TASKS}):'
     print(output)
 
 
