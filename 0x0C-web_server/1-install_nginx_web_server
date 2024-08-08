@@ -1,10 +1,26 @@
 #!/usr/bin/env bash
-# A script that installs nginx on my remote server
+# Installs Nginx with the following configurations:
+## server
+## Nginx should be listening on port 80
+## When querying Nginx at its root / with a GET request (requesting a page)\
+### using curl, it must return a page that contains the string Hello World!
+## As an answer file, write a Bash script that configures a new Ubuntu machine\
+### to respect above requirements (this script will be run on the server itself)
+## You can’t use systemctl for restarting nginx
+
 apt-get -y update
 apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
-mkdir -p /var/www/html
-sed -i 's/8080/80/g' /etc/nginx/sites-available/default
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+
+touch /var/www/html/index.html
 echo "Hello World!" > /var/www/html/index.html
-nginx -t
+
+printf %s "server {
+    listen              80 default_server;
+    listen              [::]:80 default_server;
+
+    root                /var/www/html;
+    index               index.html index.htm index.nginx-debian.html;
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart
