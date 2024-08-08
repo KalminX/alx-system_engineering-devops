@@ -2,7 +2,7 @@
 # A script that installs nginx on my remote server
 apt-get -y update
 apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
+ufw allow 'Nginx HTTP'
 mkdir -p /var/www/html
 sed -i 's/8080/80/g' /etc/nginx/sites-available/default
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
