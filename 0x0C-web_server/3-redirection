@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# A script that installs nginx on my remote server
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+mkdir -p /var/www/html
+cat <<EOL > /etc/nginx/sites-available/default
+
+server {
+    listen 80;
+    server_name _;
+
+    location = /redirect_me {
+        return 301 https://www.youtube.com/playlist?list=PL2-Nvp2Kn0FPH2xU3IbKrrkae-VVXs1vk;
+    }
+    location / {
+        root /var/www/html;
+        index index.html;
+    }
+}
+EOL
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+echo "Hello World!" > /var/www/html/index.html
+nginx -t
+
+#!/usr/bin/env bash
+# A script that installs nginx on my remote server
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+mkdir -p /var/www/html
+sed -i 's/8080/80/g' /etc/nginx/sites-available/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
+echo "Hello World!" > /var/www/html/index.html
+nginx -t
