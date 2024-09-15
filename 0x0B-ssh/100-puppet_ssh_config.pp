@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Configuration using puppet
 file { '/home/ubuntu/.ssh/config':
   ensure  => file,
