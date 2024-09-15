@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Configuration using puppet
-file { '/home/ubuntu/.ssh/config':
+file { '~/.ssh/config':
   ensure  => file,
   content => @("EOF"),
 Host *
-    IdentityFile /home/ubuntu/.ssh/school
+    IdentityFile ~/.ssh/school
     PasswordAuthentication no
   EOF
 }
