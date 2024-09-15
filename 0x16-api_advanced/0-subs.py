@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A python script that fetches number of subscribers in a particular subreddit"""
 import json
 import requests
 import sys
