@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# A script that creates an ssh key with a custom passphrase(betty), private key(school)
+ssh-keygen -f school -b 4096 -N betty
